@@ -369,7 +369,7 @@
         messages.push({ role: "tool", tool_call_id: call.id, content });
         pending.push({
           kind: "tool",
-          label: toolLabels[call.function.name] || "Unknown tool",
+          label: Object.hasOwn(toolLabels, call.function.name) ? toolLabels[call.function.name] : "Unknown tool",
           content: content.length > 1200 ? `${content.slice(0, 1200)}...` : content,
         });
       }
