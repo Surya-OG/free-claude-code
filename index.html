@@ -26,6 +26,7 @@
           <span>free claude code<span class="brand-period">.</span></span>
         </a>
         <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#playground">Try models</a>
           <a href="#features">Features</a>
           <a href="#how-it-works">How it works</a>
           <a href="#get-started">Get started</a>
@@ -36,6 +37,7 @@
         <details class="mobile-nav">
           <summary aria-label="Navigation menu"><span></span><span></span></summary>
           <nav aria-label="Mobile navigation">
+            <a href="#playground">Try models</a>
             <a href="#features">Features</a>
             <a href="#how-it-works">How it works</a>
             <a href="#get-started">Get started</a>
@@ -55,7 +57,7 @@
             Free Claude Code brings your AI workflow together in one local proxy.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#get-started">Get started <span aria-hidden="true">&rarr;</span></a>
+            <a class="button button-primary" href="#playground">Try free models <span aria-hidden="true">&rarr;</span></a>
             <a class="button button-secondary" href="https://github.com/Surya-OG/free-claude-code" target="_blank" rel="noopener noreferrer">Explore on GitHub <span aria-hidden="true">&nearr;</span></a>
           </div>
           <div class="hero-notes" aria-label="Project highlights">
@@ -100,6 +102,58 @@
           </div>
         </div>
       </div>
+
+      <section id="playground" class="section container playground-section" aria-labelledby="playground-title">
+        <div class="section-intro">
+          <div>
+            <p class="eyebrow">FREE MODEL PLAYGROUND</p>
+            <h2 id="playground-title">Try a model.<br /><em>Use free tools.</em></h2>
+          </div>
+          <p>Chat with free, tool-capable OpenRouter models. The available models are discovered live and may change.</p>
+        </div>
+        <div class="playground-grid">
+          <div class="playground-settings">
+            <label for="router-key">OpenRouter API key</label>
+            <input id="router-key" type="password" autocomplete="off" data-1p-ignore="" data-bwignore="" data-form-type="other" placeholder="Paste your key" aria-describedby="key-help" />
+            <p id="key-help" class="playground-help">
+              <a href="https://openrouter.ai/keys" target="_blank" rel="noopener noreferrer">Get an OpenRouter key &nearr;</a>.
+              Your key and messages go directly from your browser to OpenRouter. This site does not save them.
+            </p>
+
+            <label for="free-model">Free model</label>
+            <div class="model-picker">
+              <select id="free-model" disabled aria-describedby="model-status">
+                <option value="">Loading models&hellip;</option>
+              </select>
+              <button id="refresh-models" class="small-button" type="button">Refresh</button>
+            </div>
+            <p id="model-status" class="playground-help" role="status" aria-live="polite">Loading the free model catalog&hellip;</p>
+
+            <div class="local-tools">
+              <h3>Free browser tools</h3>
+              <div class="local-tool-pills"><span>Calculator</span><span>UTC clock</span><span>JSON formatter</span></div>
+              <p>Models can call these tools locally. They cannot browse the web, access files, or run code.</p>
+            </div>
+            <p class="playground-help">Only OpenRouter's <code>:free</code> variants and free router with tool support are listed. Requests have a zero-price limit; provider availability and rate limits still apply. Free endpoints may retain prompts: review <a href="https://openrouter.ai/settings/privacy" target="_blank" rel="noopener noreferrer">privacy settings &nearr;</a> before sharing sensitive information.</p>
+          </div>
+          <div class="playground-chat">
+            <div class="chat-heading">
+              <div><span class="eyebrow">YOUR WORKSPACE</span><strong>Model chat</strong></div>
+              <button id="clear-chat" class="small-button" type="button" disabled>New chat</button>
+            </div>
+            <div id="chat-log" class="chat-log" role="log" aria-live="polite" aria-relevant="additions text"></div>
+            <form id="chat-form" autocomplete="off" data-1p-ignore="" data-bwignore="" data-form-type="other">
+              <label for="chat-message">Message</label>
+              <textarea id="chat-message" rows="3" maxlength="16000" autocomplete="off" data-1p-ignore="" data-bwignore="" data-form-type="other" placeholder="Ask a question or try: What is 42 times 19?" disabled></textarea>
+              <div class="chat-actions">
+                <p id="chat-status" role="status" aria-live="polite">Add your key and choose a model to start.</p>
+                <button id="stop-chat" class="small-button" type="button" hidden>Stop</button>
+                <button id="send-chat" class="button button-primary" type="submit" disabled>Send <span aria-hidden="true">&rarr;</span></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
 
       <section id="features" class="section container">
         <div class="section-intro">
